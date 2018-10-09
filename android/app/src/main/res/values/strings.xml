@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Registro Praxis</string>
+    <string name="userdata.edt.complete_name">Nombre completo</string>
+    <string name="userdata.edt.id">ID</string>
 </resources>

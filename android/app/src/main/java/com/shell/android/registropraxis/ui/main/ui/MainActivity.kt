@@ -1,9 +1,10 @@
-    package com.shell.android.registropraxis
+    package com.shell.android.registropraxis.ui.main.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.shell.android.registropraxis.R
 
-class MainActivity : AppCompatActivity() {
+    class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
