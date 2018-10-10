@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.userdata.ui.UserDataActivity">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/tilName"
         android:layout_width="0dp"
@@ -14,15 +18,16 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/edtName"
             android:layout_width="match_parent"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_height="wrap_content"
-            android:hint="@string/userdata.edt.complete_name" />
+            android:hint="@string/userdata.edt.complete_name"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -39,8 +44,8 @@
         <android.support.design.widget.TextInputEditText
             android:id="@+id/edtId"
             android:layout_width="match_parent"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_height="wrap_content"
-            android:hint="@string/userdata.edt.id" />
+            android:hint="@string/userdata.edt.id"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </android.support.design.widget.TextInputLayout>
 </android.support.constraint.ConstraintLayout>

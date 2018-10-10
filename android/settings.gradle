@@ -1,1 +1,3 @@
-include ':app'
+include ':app', ':shellcorebaselibrary'
+
+project(':shellcorebaselibrary').projectDir = new File('/home/shell/Projects/Personal/FullStack/ShellCoreBaseLibrary/baselibrary')

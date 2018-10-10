@@ -1,10 +1,10 @@
 package com.shell.android.registropraxis.ui.userdata.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.shell.android.registropraxis.R
+import com.shell.android.shellcorebaselibrary.CustomToolbarActivity
 
-class UserDataActivity : AppCompatActivity() {
+class UserDataActivity : CustomToolbarActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
