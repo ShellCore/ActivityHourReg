@@ -3,16 +3,21 @@
     <string name="app_name">Praxis Registry</string>
 
     <!--User Data-->
-    <string name="userdata.edt.complete_name">Nombre completo</string>
-    <string name="userdata.edt.id">ID</string>
+    <string name="userdata.edt.complete_name">Complete name</string>
+    <string name="userdata.edt.id">Id</string>
 
     <!--Main menu-->
     <string name="mainMenu.home">Home</string>
     <string name="mainMenu.userData">Personal Data</string>
     <string name="mainMenu.assistance">Assistance</string>
     <string name="mainMenu.activities">Activities</string>
+    <string name="mainMenu.about">About</string>
 
     <!--Drawer-->
     <string name="open_drawer">Navigation drawer is open</string>
     <string name="close_drawer">Navigation drawer is close</string>
+    <string name="home.button.begin">Entrada</string>
+    <string name="home.button.food">Comida</string>
+    <string name="home.button.foodEnd">Termino comida</string>
+    <string name="home.button.end">Salida</string>
 </resources>
