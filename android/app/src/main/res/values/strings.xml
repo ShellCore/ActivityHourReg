@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">Registro Praxis</string>
+
+    <string name="app_name">Praxis Registry</string>
+
+    <!--User Data-->
     <string name="userdata.edt.complete_name">Nombre completo</string>
     <string name="userdata.edt.id">ID</string>
+
+    <!--Main menu-->
+    <string name="mainMenu.home">Home</string>
+    <string name="mainMenu.userData">Personal Data</string>
+    <string name="mainMenu.assistance">Assistance</string>
+    <string name="mainMenu.activities">Activities</string>
+
+    <!--Drawer-->
+    <string name="open_drawer">Navigation drawer is open</string>
+    <string name="close_drawer">Navigation drawer is close</string>
 </resources>
