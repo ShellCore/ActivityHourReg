@@ -3,9 +3,9 @@ package com.shell.android.registropraxis.ui.userdata.events
 import com.shell.android.registropraxis.db.models.UserData
 
 class UserDataEvent (
-        var eventType: Int,
-        var message: String,
-        var userData: UserData) {
+        var eventType: Int = 0,
+        var message: String = "",
+        var userData: UserData? = null) {
 
     companion object {
         const val LOAD_SUCCESS = 1

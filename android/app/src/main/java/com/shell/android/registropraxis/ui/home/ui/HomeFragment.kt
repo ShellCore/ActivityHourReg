@@ -26,6 +26,4 @@ class HomeFragment : Fragment() {
         txtMonth.text = actualDate.getFormattedMonthYear()
     }
 
-
-
 }

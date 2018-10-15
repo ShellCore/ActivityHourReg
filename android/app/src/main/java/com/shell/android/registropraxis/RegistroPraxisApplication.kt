@@ -2,6 +2,11 @@ package com.shell.android.registropraxis
 
 import android.app.Application
 import com.raizlabs.android.dbflow.config.FlowManager
+import com.shell.android.registropraxis.libs.di.LibsModule
+import com.shell.android.registropraxis.ui.userdata.di.DaggerUserDataComponent
+import com.shell.android.registropraxis.ui.userdata.di.UserDataComponent
+import com.shell.android.registropraxis.ui.userdata.di.UserDataModule
+import com.shell.android.registropraxis.ui.userdata.ui.UserDataView
 
 class RegistroPraxisApplication : Application() {
 
@@ -18,4 +23,11 @@ class RegistroPraxisApplication : Application() {
     private fun createDatabase() = FlowManager.init(this)
 
     private fun teardownDatabase() = FlowManager.destroy()
+
+    fun getUserDataComponent(view: UserDataView): UserDataComponent {
+        return DaggerUserDataComponent.builder()
+                .libsModule(LibsModule())
+                .userDataModule(UserDataModule(view))
+                .build()
+    }
 }

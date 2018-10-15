@@ -29,7 +29,7 @@ data class Day (
         var end: String = "",
 
         @Column
-        var comments: String?
+        var comments: String = ""
 
 ): BaseModel() {
 }

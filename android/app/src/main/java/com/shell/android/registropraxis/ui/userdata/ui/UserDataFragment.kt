@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
 import com.shell.android.registropraxis.R
+import com.shell.android.registropraxis.RegistroPraxisApplication
 import com.shell.android.registropraxis.db.models.UserData
 import com.shell.android.registropraxis.ui.userdata.UserDataPresenter
 import com.shell.android.shellcorebaselibrary.utils.showMessage
@@ -25,12 +26,21 @@ class UserDataFragment : Fragment(), UserDataView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupInjection()
         presenter.onCreate()
         presenter.loadSavedUserData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         activity?.menuInflater?.inflate(R.menu.user_data_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item!!.itemId) {
+            R.id.menuClean -> cleanData()
+            R.id.menuSave -> saveData()
+        }
+        return true
     }
 
     override fun onDestroy() {
@@ -66,5 +76,11 @@ class UserDataFragment : Fragment(), UserDataView {
 
     override fun showMessage(message: String) {
         conUserData.showMessage(message)
+    }
+
+    private fun setupInjection() {
+        val app = activity!!.application as RegistroPraxisApplication
+        val component = app.getUserDataComponent(this)
+        component.inject(this)
     }
 }

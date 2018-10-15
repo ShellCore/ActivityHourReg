@@ -4,6 +4,7 @@ import com.shell.android.registropraxis.db.models.UserData
 import com.shell.android.registropraxis.libs.base.EventBus
 import com.shell.android.registropraxis.ui.userdata.events.UserDataEvent
 import com.shell.android.registropraxis.ui.userdata.ui.UserDataView
+import org.greenrobot.eventbus.Subscribe
 
 class UserDataPresenterImpl (
 
@@ -44,13 +45,14 @@ class UserDataPresenterImpl (
         }
     }
 
+    @Subscribe
     override fun onEventMainThread(event: UserDataEvent) {
         view?.hideProgressbar()
 
         when(event.eventType) {
-            UserDataEvent.LOAD_SUCCESS -> view?.loadData(event.userData)
+            UserDataEvent.LOAD_SUCCESS -> view?.loadData(event.userData!!)
             UserDataEvent.SAVE_SUCCESS -> {
-                view?.loadData(event.userData)
+                view?.loadData(event.userData!!)
                 view?.showMessage(event.message)
             }
             UserDataEvent.CLEAN_SUCCESS -> view?.loadData(UserData())

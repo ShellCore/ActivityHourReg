@@ -2,10 +2,12 @@ package com.shell.android.registropraxis.libs.di
 
 import com.shell.android.registropraxis.libs.GreenRobotEventBus
 import com.shell.android.registropraxis.libs.base.EventBus
+import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-class LibsModule() {
+@Module
+class LibsModule {
 
     @Provides
     @Singleton
