@@ -2,6 +2,7 @@
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -79,15 +80,22 @@
                 android:textColor="@color/colorAccent" />
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnEdit"
-        android:src="@drawable/ic_edit"
-        android:tint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:src="@drawable/ic_edit"
+        android:tint="@android:color/white" />
 
 </android.support.design.widget.CoordinatorLayout>

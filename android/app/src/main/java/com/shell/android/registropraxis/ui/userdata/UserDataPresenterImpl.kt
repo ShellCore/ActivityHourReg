@@ -12,7 +12,6 @@ class UserDataPresenterImpl (
         var view: UserDataView?,
         val interactor: UserDataInteractor
 
-
 ) : UserDataPresenter {
 
     override fun onCreate() {

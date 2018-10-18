@@ -46,17 +46,17 @@ class MainActivity : CustomToolbarActivity(), View.OnClickListener, NavigationVi
         }
     }
 
+    fun fragmentTransaction(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit()
+    }
+
     private fun setNavDrawer() {
         val toggle = ActionBarDrawerToggle(this, drawerLayout, _toolbar, R.string.open_drawer, R.string.close_drawer)
         toggle.isDrawerIndicatorEnabled = true
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
-    }
-
-    private fun fragmentTransaction(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit()
     }
 }
