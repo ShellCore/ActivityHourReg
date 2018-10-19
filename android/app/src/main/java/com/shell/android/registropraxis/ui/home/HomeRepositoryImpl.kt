@@ -6,6 +6,7 @@ import com.shell.android.registropraxis.db.models.Day
 import com.shell.android.registropraxis.db.models.Day_Table
 import com.shell.android.registropraxis.libs.base.EventBus
 import com.shell.android.registropraxis.ui.home.events.HomeEvent
+import com.shell.android.shellcorebaselibrary.utils.getBeginDay
 import java.util.*
 
 class HomeRepositoryImpl(val eventBus: EventBus) : HomeRepository {
@@ -17,7 +18,7 @@ class HomeRepositoryImpl(val eventBus: EventBus) : HomeRepository {
     override fun loadActualDay() {
         var actualDay = SQLite.select()
                 .from(Day::class.java)
-                .where(Day_Table.day.eq(Date()))
+                .where(Day_Table.day.eq(Date().getBeginDay()))
                 .querySingle()
 
         if (actualDay != null) {
@@ -28,6 +29,7 @@ class HomeRepositoryImpl(val eventBus: EventBus) : HomeRepository {
     }
 
     override fun saveDay(day: Day) {
+        day.day = day.day.getBeginDay()
         if (day.save()) {
             post(HomeEvent.SAVE_SUCCESS, day = day, message = "La hora quedó registrada correctamente")
             Log.i(TAG, "$day")

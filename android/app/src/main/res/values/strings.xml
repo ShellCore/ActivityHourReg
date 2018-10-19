@@ -20,4 +20,7 @@
     <string name="home.button.food">Comida</string>
     <string name="home.button.foodEnd">Termino comida</string>
     <string name="home.button.end">Salida</string>
+
+    <!--RegisterDetail-->
+    <string name="registerdetail.title">Detalle de registro</string>
 </resources>

@@ -46,6 +46,11 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
         presenter.loadActualDay()
     }
 
+    override fun onDestroy() {
+        presenter.onDestroy()
+        super.onDestroy()
+    }
+
     override fun onClick(itemView: View) {
         var type: Int
         when (itemView.id) {
@@ -55,11 +60,6 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
             R.id.btnOut -> setHourRegistration(Day.TIME_OUT, Calendar.getInstance().time)
             R.id.btnEdit -> navigateToEditDay()
         }
-    }
-
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
     }
 
     override fun showProgressbar() {

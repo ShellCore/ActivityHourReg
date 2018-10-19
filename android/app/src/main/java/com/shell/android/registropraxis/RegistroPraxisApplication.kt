@@ -7,6 +7,10 @@ import com.shell.android.registropraxis.ui.home.di.DaggerHomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeModule
 import com.shell.android.registropraxis.ui.home.ui.HomeView
+import com.shell.android.registropraxis.ui.registerdetail.di.DaggerRegisterDetailComponent
+import com.shell.android.registropraxis.ui.registerdetail.di.RegisterDetailComponent
+import com.shell.android.registropraxis.ui.registerdetail.di.RegisterDetailModule
+import com.shell.android.registropraxis.ui.registerdetail.ui.RegisterDetailView
 import com.shell.android.registropraxis.ui.userdata.di.DaggerUserDataComponent
 import com.shell.android.registropraxis.ui.userdata.di.UserDataComponent
 import com.shell.android.registropraxis.ui.userdata.di.UserDataModule
@@ -39,6 +43,13 @@ class RegistroPraxisApplication : Application() {
         return DaggerHomeComponent.builder()
                 .libsModule(LibsModule())
                 .homeModule(HomeModule(view))
+                .build()
+    }
+
+    fun getRegisterDetailComponent(view: RegisterDetailView): RegisterDetailComponent {
+        return DaggerRegisterDetailComponent.builder()
+                .libsModule(LibsModule())
+                .registerDetailModule(RegisterDetailModule(view))
                 .build()
     }
 }
