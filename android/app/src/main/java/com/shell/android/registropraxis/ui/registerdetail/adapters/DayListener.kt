@@ -4,5 +4,5 @@ import com.shell.android.registropraxis.db.models.Day
 
 interface DayListener {
 
-    fun onClick(day: Day, position: Int)
+    fun onDaySelected(day: Day)
 }

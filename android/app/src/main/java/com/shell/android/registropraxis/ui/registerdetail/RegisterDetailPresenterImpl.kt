@@ -1,5 +1,6 @@
 package com.shell.android.registropraxis.ui.registerdetail
 
+import com.shell.android.registropraxis.db.models.Day
 import com.shell.android.registropraxis.libs.base.EventBus
 import com.shell.android.registropraxis.ui.registerdetail.events.RegisterDetailEvent
 import com.shell.android.registropraxis.ui.registerdetail.ui.RegisterDetailView
@@ -29,6 +30,13 @@ class RegisterDetailPresenterImpl(
         }
     }
 
+    override fun saveRegister(day: Day) {
+        view?.apply {
+            showProgressBar()
+            interactor.saveRegister(day)
+        }
+    }
+
     @Subscribe
     override fun onEventMainThread(event: RegisterDetailEvent) {
         view?.apply {
@@ -37,7 +45,11 @@ class RegisterDetailPresenterImpl(
                 RegisterDetailEvent.LOAD_SUCCESS -> {
                     updateDayList(event.days!!)
                 }
-                RegisterDetailEvent.LOAD_ERROR -> showMessage(event.message)
+                RegisterDetailEvent.SAVE_SUCCESS -> {
+                    loadRegisterMonth()
+                }
+                RegisterDetailEvent.LOAD_ERROR,
+                RegisterDetailEvent.SAVE_ERROR -> showMessage(event.message)
             }
         }
     }

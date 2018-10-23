@@ -23,4 +23,19 @@
 
     <!--RegisterDetail-->
     <string name="registerdetail.title">Detalle de registro</string>
+    <string name="registerdetail.title.day">Día</string>
+    <string name="registerdetail.title.begin">Entrada</string>
+    <string name="registerdetail.title.food">Comida</string>
+    <string name="registerdetail.title.work">Fin</string>
+    <string name="registerdetail.title.end">Salida</string>
+
+    <!--EditRegister-->
+    <string name="editRegister.hint.in">Hora de entrada</string>
+    <string name="editRegister.hint.food">Inicio de Comida</string>
+    <string name="editRegister.hint.work">Fin de comida</string>
+    <string name="editRegister.hint.out">Hora de salida</string>
+    <string name="editRegister.hint.comments">Comentarios</string>
+    <string name="editRegister.btn.cancel">Cancelar</string>
+    <string name="editRegister.btn.save">Guardar</string>
+
 </resources>

@@ -39,7 +39,7 @@ class RegisterAdapter(
             txtOut.text = day.end
             txtComments.text = if (day.comments.isNotEmpty()) "..." else ""
 
-            setOnClickListener { listener.onClick(day, adapterPosition) }
+            setOnClickListener { listener.onDaySelected(day) }
         }
     }
 }

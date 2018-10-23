@@ -12,5 +12,7 @@ class RegisterDetailEvent(
     companion object {
         const val LOAD_SUCCESS = 1
         const val LOAD_ERROR = 2
+        const val SAVE_SUCCESS = 3
+        const val SAVE_ERROR = 4
     }
 }
