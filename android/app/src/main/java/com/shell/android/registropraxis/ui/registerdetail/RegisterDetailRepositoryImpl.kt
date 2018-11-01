@@ -22,11 +22,15 @@ class RegisterDetailRepositoryImpl(
                 .from(Day::class)
                 .queryList()
         if (days.size > 0) {
-            for (day in days) {
+
+            val iterator = days.iterator()
+            while (iterator.hasNext()) {
+                val day = iterator.next()
                 if (!day.day.getBeginMonth().equals(Date().getBeginMonth())) {
-                    days.remove(day)
+                    iterator.remove()
                 }
             }
+
             post(RegisterDetailEvent.LOAD_SUCCESS, days = days)
         } else {
             post(RegisterDetailEvent.LOAD_SUCCESS, days = ArrayList())
