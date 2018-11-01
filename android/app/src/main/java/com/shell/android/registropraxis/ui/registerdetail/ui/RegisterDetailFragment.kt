@@ -3,7 +3,6 @@ package com.shell.android.registropraxis.ui.registerdetail.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -34,7 +33,7 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        activity?.setTitle(R.string.registerdetail_title)
+        activity?.setTitle(R.string.registerDetail_title)
         return inflater.inflate(R.layout.fragment_register_detail, container, false)
     }
 

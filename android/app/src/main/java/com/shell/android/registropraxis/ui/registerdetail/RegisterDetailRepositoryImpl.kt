@@ -3,10 +3,8 @@ package com.shell.android.registropraxis.ui.registerdetail
 import com.raizlabs.android.dbflow.kotlinextensions.from
 import com.raizlabs.android.dbflow.sql.language.SQLite
 import com.shell.android.registropraxis.db.models.Day
-import com.shell.android.registropraxis.db.models.Day_Table
 import com.shell.android.registropraxis.libs.base.EventBus
 import com.shell.android.registropraxis.ui.registerdetail.events.RegisterDetailEvent
-import com.shell.android.shellcorebaselibrary.utils.getBeginDay
 import com.shell.android.shellcorebaselibrary.utils.getBeginMonth
 import java.util.*
 import kotlin.collections.ArrayList

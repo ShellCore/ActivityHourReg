@@ -10,7 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.shell.android.registropraxis.R
 import com.shell.android.registropraxis.db.models.Day
+import com.shell.android.shellcorebaselibrary.utils.getFormattedDay
+import com.shell.android.shellcorebaselibrary.utils.setCustomDay
 import kotlinx.android.synthetic.main.dialog_edit_register.*
+import java.util.*
 
 class EditRegisterDialog : AppCompatDialogFragment() {
 
@@ -44,6 +47,7 @@ class EditRegisterDialog : AppCompatDialogFragment() {
         super.onActivityCreated(savedInstanceState)
 
         day.apply {
+            tilDay.editText!!.setText(this.day.getFormattedDay())
             tilIn.editText!!.setText(begin)
             tilFood.editText!!.setText(food)
             tilWork.editText!!.setText(foodEnd)
@@ -54,6 +58,7 @@ class EditRegisterDialog : AppCompatDialogFragment() {
 
     private fun loadCapturedValues() {
         day.apply {
+            this.day = Date().setCustomDay(Integer.parseInt(tilDay.editText!!.getText().toString()))
             begin = tilIn.editText!!.getText().toString()
             food = tilFood.editText!!.getText().toString()
             foodEnd = tilWork.editText!!.getText().toString()

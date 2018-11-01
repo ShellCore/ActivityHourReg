@@ -23,7 +23,7 @@
             android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/userdata.edt.complete_name"
+            android:hint="@string/userdata_edt_completeName"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </android.support.design.widget.TextInputLayout>
 
@@ -42,7 +42,7 @@
             android:id="@+id/edtId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/userdata.edt.id"
+            android:hint="@string/userdata_edt_id"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </android.support.design.widget.TextInputLayout>
 

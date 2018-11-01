@@ -56,27 +56,27 @@
                 style="@style/HomeButtonStyle"
                 android:drawableTop="@drawable/ic_in"
                 android:src="@drawable/ic_in"
-                android:text="@string/home.button.begin" />
+                android:text="@string/home_btn_begin" />
 
             <Button
                 android:id="@+id/btnFood"
                 style="@style/HomeButtonStyle"
                 android:drawableTop="@drawable/ic_food"
-                android:text="@string/home.button.food"
+                android:text="@string/home_btn_food"
                 android:textColor="@color/colorAccent" />
 
             <Button
                 android:id="@+id/btnWork"
                 style="@style/HomeButtonStyle"
                 android:drawableTop="@drawable/ic_work"
-                android:text="@string/home.button.foodEnd"
+                android:text="@string/home_btn_foodEnd"
                 android:textColor="@color/colorAccent" />
 
             <Button
                 android:id="@+id/btnOut"
                 style="@style/HomeButtonStyle"
                 android:drawableTop="@drawable/ic_out"
-                android:text="@string/home.button.end"
+                android:text="@string/home_btn_end"
                 android:textColor="@color/colorAccent" />
         </LinearLayout>
 

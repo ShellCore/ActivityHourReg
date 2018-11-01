@@ -6,20 +6,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/navHome"
-            android:title="@string/mainMenu.home" />
+            android:title="@string/mainMenu_home" />
         <item
             android:id="@+id/navUserData"
-            android:title="@string/mainMenu.userData" />
+            android:title="@string/mainMenu_userData" />
         <item
             android:id="@+id/navAssistance"
-            android:title="@string/mainMenu.assistance" />
+            android:title="@string/mainMenu_assistance" />
         <item
             android:id="@+id/navActivities"
-            android:title="@string/mainMenu.activities" />
+            android:title="@string/mainMenu_activities" />
     </group>
 
     <item
         android:id="@+id/navAbout"
-        android:title="@string/mainMenu.about" />
+        android:title="@string/mainMenu_about" />
 
 </menu>
