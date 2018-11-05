@@ -11,8 +11,9 @@ class UserDataInteractorImpl(val eventBus: EventBus, val repository: UserDataRep
     }
 
     override fun saveUserData(userData: UserData) {
-        if (userData.name.isEmpty() || userData.userId.isEmpty()) {
-            post("Se requiere que el nombre y el id tengan valores válidos")
+        if (userData.name.isEmpty()
+                || userData.userId.isEmpty()) {
+            post(UserDataEvent.SAVE_ERROR, "Se requiere que el nombre y el id tengan valores válidos")
         } else {
             repository.saveUserData(userData)
         }
@@ -22,9 +23,9 @@ class UserDataInteractorImpl(val eventBus: EventBus, val repository: UserDataRep
         repository.cleanUserData(userData)
     }
 
-    private fun post(message: String) {
+    private fun post(eventType: Int, message: String) {
         val event = UserDataEvent()
-        event.eventType = UserDataEvent.SAVE_ERROR
+        event.eventType = eventType
         event.message = message
         eventBus.post(event)
     }

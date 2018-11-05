@@ -1,40 +1,42 @@
-package com.shell.android.registropraxis.ui.userdata.ui
+package com.shell.android.registropraxis.ui.clientdata.ui
+
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
 import com.shell.android.registropraxis.R
 import com.shell.android.registropraxis.RegistroPraxisApplication
-import com.shell.android.registropraxis.db.models.UserData
-import com.shell.android.registropraxis.ui.userdata.UserDataPresenter
+import com.shell.android.registropraxis.db.models.ClientData
+import com.shell.android.registropraxis.ui.clientdata.ClientDataPresenter
 import com.shell.android.shellcorebaselibrary.utils.getText
 import com.shell.android.shellcorebaselibrary.utils.setText
 import com.shell.android.shellcorebaselibrary.utils.showMessage
-import kotlinx.android.synthetic.main.fragment_user_data.*
+import kotlinx.android.synthetic.main.fragment_client_data.*
 import javax.inject.Inject
 
-class UserDataFragment : Fragment(), UserDataView {
+class ClientDataFragment : Fragment(), ClientDataView {
 
     @Inject
-    lateinit var presenter: UserDataPresenter
+    lateinit var presenter: ClientDataPresenter
 
-    var userData: UserData = UserData()
+    var clientData: ClientData = ClientData()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        activity?.setTitle(R.string.mainMenu_userData)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        activity?.setTitle(R.string.mainMenu_clientData)
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_user_data, container, false)
+        return inflater.inflate(R.layout.fragment_client_data, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupInjection()
         presenter.onCreate()
-        presenter.loadSavedUserData()
+        presenter.loadSavedClientData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        activity?.menuInflater?.inflate(R.menu.user_data_menu, menu)
+        activity?.menuInflater?.inflate(R.menu.client_data_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -58,33 +60,35 @@ class UserDataFragment : Fragment(), UserDataView {
         progressBar.visibility = View.GONE
     }
 
-    override fun loadData(userData: UserData) {
-        this.userData = userData
-        tilName.setText(userData.name)
-        tilId.setText(userData.userId)
+    override fun showMessage(message: String) {
+        conClientData.showMessage(message)
+    }
+
+    override fun loadData(clientData: ClientData) {
+        this.clientData = clientData
+        tilContact.setText(clientData.contact)
+        tilApplicant.setText(clientData.applicant)
     }
 
     override fun cleanData() {
-        tilName.setText("")
-        tilId.setText("")
-        presenter.cleanUserData(this.userData)
+        tilContact.setText("")
+        tilApplicant.setText("")
+        presenter.cleanClientData(this.clientData)
     }
 
     override fun saveData() {
-        this.userData.apply {
-            name = tilName.getText()
-            userId = tilId.getText()
-            presenter.saveUserData(this)
+        this.clientData.apply {
+            contact = tilContact.getText()
+            applicant = tilApplicant.getText()
+            presenter.saveClientData(this)
         }
-    }
-
-    override fun showMessage(message: String) {
-        conUserData.showMessage(message)
     }
 
     private fun setupInjection() {
         val app = activity!!.application as RegistroPraxisApplication
-        val component = app.getUserDataComponent(this)
+        val component = app.getClientDataComponent(this)
         component.inject(this)
     }
 }
+
+

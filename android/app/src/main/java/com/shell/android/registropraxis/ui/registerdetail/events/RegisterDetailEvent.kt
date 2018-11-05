@@ -1,13 +1,12 @@
 package com.shell.android.registropraxis.ui.registerdetail.events
 
 import com.shell.android.registropraxis.db.models.Day
+import com.shell.android.shellcorebaselibrary.base.events.BaseEvent
 
 class RegisterDetailEvent(
 
-        var eventType: Int = 0,
-        var message: String = "",
         var days: List<Day>? = null
-) {
+) : BaseEvent() {
 
     companion object {
         const val LOAD_SUCCESS = 1

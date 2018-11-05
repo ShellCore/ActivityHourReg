@@ -11,8 +11,8 @@
             android:id="@+id/navUserData"
             android:title="@string/mainMenu_userData" />
         <item
-            android:id="@+id/navAssistance"
-            android:title="@string/mainMenu_assistance" />
+            android:id="@+id/navClientData"
+            android:title="@string/mainMenu_clientData" />
         <item
             android:id="@+id/navActivities"
             android:title="@string/mainMenu_activities" />

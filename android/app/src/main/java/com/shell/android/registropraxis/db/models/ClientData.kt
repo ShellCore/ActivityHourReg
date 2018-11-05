@@ -7,16 +7,16 @@ import com.raizlabs.android.dbflow.structure.BaseModel
 import com.shell.android.registropraxis.db.RegistroPraxisDB
 
 @Table(database = RegistroPraxisDB::class)
-data class UserData(
+data class ClientData(
 
         @PrimaryKey(autoincrement = true)
         @Column
         var id: Long = 0L,
 
         @Column
-        var name: String = "",
+        var contact: String = "",
 
         @Column
-        var userId: String = ""
+        var applicant: String = ""
 
 ) : BaseModel()

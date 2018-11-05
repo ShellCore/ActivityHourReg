@@ -22,7 +22,7 @@ class UserDataRepositoryImpl(val eventBus: EventBus) : UserDataRepository {
         if (userData.save()) {
             post(UserDataEvent.SAVE_SUCCESS, "Los datos del usuario se almacenaron correctamente", userData)
         } else {
-            post(UserDataEvent.SAVE_ERROR, message = "Hubo un error al guardar los datos del usuario")
+            post(UserDataEvent.SAVE_ERROR, "Hubo un error al guardar los datos del usuario")
         }
     }
 
@@ -30,7 +30,7 @@ class UserDataRepositoryImpl(val eventBus: EventBus) : UserDataRepository {
         if (userData.delete()) {
             post(UserDataEvent.CLEAN_SUCCESS, "Los datos del usuario han sido borrados", UserData())
         } else {
-            post(UserDataEvent.CLEAN_ERROR, message = "Los datos del usuario no se pudieron borrar")
+            post(UserDataEvent.CLEAN_ERROR, "Los datos del usuario no se pudieron borrar")
         }
 
     }

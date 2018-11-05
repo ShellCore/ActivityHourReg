@@ -1,12 +1,11 @@
 package com.shell.android.registropraxis.ui.home.events
 
 import com.shell.android.registropraxis.db.models.Day
+import com.shell.android.shellcorebaselibrary.base.events.BaseEvent
 
 class HomeEvent(
-        var eventType: Int = 0,
-        var message: String = "",
         var day : Day? = null
-) {
+) : BaseEvent() {
 
     companion object {
         const val SAVE_SUCCESS = 1

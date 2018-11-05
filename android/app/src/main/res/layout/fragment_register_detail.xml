@@ -23,35 +23,35 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/registerDetail_title_day"
+                android:text="@string/registerDetail_head_day"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/registerDetail_title_begin"
+                android:text="@string/registerDetail_head_begin"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/registerDetail_title_food"
+                android:text="@string/registerDetail_head_food"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/registerDetail_title_work"
+                android:text="@string/registerDetail_head_work"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/registerDetail_title_end"
+                android:text="@string/registerDetail_head_end"
                 android:textStyle="bold" />
 
             <TextView

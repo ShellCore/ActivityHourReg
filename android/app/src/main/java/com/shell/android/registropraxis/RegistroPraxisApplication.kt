@@ -3,6 +3,9 @@ package com.shell.android.registropraxis
 import android.app.Application
 import com.raizlabs.android.dbflow.config.FlowManager
 import com.shell.android.registropraxis.libs.di.LibsModule
+import com.shell.android.registropraxis.ui.clientdata.di.ClientDataModule
+import com.shell.android.registropraxis.ui.clientdata.di.DaggerClientDataComponent
+import com.shell.android.registropraxis.ui.clientdata.ui.ClientDataView
 import com.shell.android.registropraxis.ui.home.di.DaggerHomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeModule
@@ -32,24 +35,23 @@ class RegistroPraxisApplication : Application() {
 
     private fun teardownDatabase() = FlowManager.destroy()
 
-    fun getUserDataComponent(view: UserDataView) : UserDataComponent {
-        return DaggerUserDataComponent.builder()
-                .libsModule(LibsModule())
-                .userDataModule(UserDataModule(view))
-                .build()
-    }
+    fun getUserDataComponent(view: UserDataView) = DaggerUserDataComponent.builder()
+            .libsModule(LibsModule())
+            .userDataModule(UserDataModule(view))
+            .build()!!
 
-    fun getHomeComponent(view: HomeView): HomeComponent {
-        return DaggerHomeComponent.builder()
-                .libsModule(LibsModule())
-                .homeModule(HomeModule(view))
-                .build()
-    }
+    fun getClientDataComponent(view: ClientDataView) = DaggerClientDataComponent.builder()
+            .libsModule(LibsModule())
+            .clientDataModule(ClientDataModule(view))
+            .build()!!
 
-    fun getRegisterDetailComponent(view: RegisterDetailView): RegisterDetailComponent {
-        return DaggerRegisterDetailComponent.builder()
-                .libsModule(LibsModule())
-                .registerDetailModule(RegisterDetailModule(view))
-                .build()
-    }
+    fun getHomeComponent(view: HomeView) = DaggerHomeComponent.builder()
+            .libsModule(LibsModule())
+            .homeModule(HomeModule(view))
+            .build()!!
+
+    fun getRegisterDetailComponent(view: RegisterDetailView) = DaggerRegisterDetailComponent.builder()
+            .libsModule(LibsModule())
+            .registerDetailModule(RegisterDetailModule(view))
+            .build()!!
 }

@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import com.shell.android.registropraxis.R
+import com.shell.android.registropraxis.ui.clientdata.ui.ClientDataFragment
 import com.shell.android.registropraxis.ui.home.ui.HomeFragment
 import com.shell.android.registropraxis.ui.userdata.ui.UserDataFragment
 import com.shell.android.shellcorebaselibrary.CustomToolbarActivity
@@ -33,6 +34,7 @@ class MainActivity : CustomToolbarActivity(), View.OnClickListener, NavigationVi
         when (menuItem.itemId) {
             R.id.navHome -> fragmentTransaction(HomeFragment())
             R.id.navUserData -> fragmentTransaction(UserDataFragment())
+            R.id.navClientData -> fragmentTransaction(ClientDataFragment())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
