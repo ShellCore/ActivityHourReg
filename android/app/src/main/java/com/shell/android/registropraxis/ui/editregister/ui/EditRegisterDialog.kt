@@ -1,27 +1,31 @@
 package com.shell.android.registropraxis.ui.editregister.ui
 
 
+import android.app.DatePickerDialog
 import android.app.Dialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.TextView
+import android.widget.TimePicker
 import com.shell.android.registropraxis.R
 import com.shell.android.registropraxis.db.models.Day
-import com.shell.android.shellcorebaselibrary.utils.getFormattedDay
-import com.shell.android.shellcorebaselibrary.utils.setCustomDay
+import com.shell.android.shellcorebaselibrary.utils.*
 import kotlinx.android.synthetic.main.dialog_edit_register.*
 import java.util.*
 
-class EditRegisterDialog : AppCompatDialogFragment() {
+class EditRegisterDialog : AppCompatDialogFragment(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     // Variables
     lateinit var customView: View
     lateinit var day: Day
     lateinit var listener: OnConditionClickListener
-
+    var txtSelected : TextView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return customView
@@ -47,23 +51,71 @@ class EditRegisterDialog : AppCompatDialogFragment() {
         super.onActivityCreated(savedInstanceState)
 
         day.apply {
-            tilDay.editText!!.setText(this.day.getFormattedDay())
-            tilIn.editText!!.setText(begin)
-            tilFood.editText!!.setText(food)
-            tilWork.editText!!.setText(foodEnd)
-            tilOut.editText!!.setText(end)
-            tilComments.editText!!.setText(comments)
+            txtDay!!.text = this.day.getFormattedDaySimple()
+            txtIn.text = begin
+            txtFood.text = food
+            txtWork.text = foodEnd
+            txtOut.text = end
+            tilComments.setText(comments)
         }
+
+        setupOnClick()
+    }
+
+    override fun onDateSet(datePicker: DatePicker, year: Int, month: Int, day: Int) {
+        txtDay.text = "$day"
+    }
+
+    override fun onTimeSet(timePicker: TimePicker, hour: Int, minute: Int) {
+        val time = "${hour.format2Digits()}:${minute.format2Digits()}"
+        txtSelected!!.text = time
+        txtSelected = null
     }
 
     private fun loadCapturedValues() {
         day.apply {
-            this.day = Date().setCustomDay(Integer.parseInt(tilDay.editText!!.getText().toString()))
-            begin = tilIn.editText!!.getText().toString()
-            food = tilFood.editText!!.getText().toString()
-            foodEnd = tilWork.editText!!.getText().toString()
-            end = tilOut.editText!!.getText().toString()
-            comments = tilComments.editText!!.getText().toString()
+            this.day = Date().setCustomDay(Integer.parseInt(txtDay.text.toString()))
+            begin = txtIn.text.toString()
+            food = txtFood.text.toString()
+            foodEnd = txtWork.text.toString()
+            end = txtOut.text.toString()
+            comments = tilComments.getText()
         }
+    }
+
+    private fun setupOnClick() {
+        txtDay.setOnClickListener {
+            showDatePickerDialog()
+        }
+
+        txtIn.setOnClickListener {
+            showTimePickerDialog(txtIn)
+        }
+        txtFood.setOnClickListener {
+            showTimePickerDialog(txtFood)
+        }
+        txtWork.setOnClickListener {
+            showTimePickerDialog(txtWork)
+        }
+        txtOut.setOnClickListener {
+            showTimePickerDialog(txtOut)
+        }
+    }
+
+    private fun showDatePickerDialog() {
+        val c = Calendar.getInstance()
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val month = c.get(Calendar.MONTH)
+        val year = c.get(Calendar.YEAR)
+
+        DatePickerDialog(context, this, year, month, day).show()
+    }
+
+    private fun showTimePickerDialog(selected: TextView) {
+        txtSelected = selected
+        val c = Calendar.getInstance()
+        val hour = c.get(Calendar.HOUR_OF_DAY)
+        val minute = c.get(Calendar.MINUTE)
+        TimePickerDialog(context, this, hour, minute, true).show()
     }
 }

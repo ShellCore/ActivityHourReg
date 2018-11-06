@@ -1,68 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilDay"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/editRegister_hint_day" />
-    </android.support.design.widget.TextInputLayout>
+        <TableRow
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editRegister_hint_day"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/editRegister_hint_in" />
-    </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/txtDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBackground"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                tools:text="14" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilFood"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        </TableRow>
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/editRegister_hint_food" />
-    </android.support.design.widget.TextInputLayout>
+        <TableRow
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilWork"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editRegister_hint_in"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/editRegister_hint_work" />
-    </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/txtIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBackground"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                tools:text="09:00" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        </TableRow>
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/editRegister_hint_out" />
-    </android.support.design.widget.TextInputLayout>
+        <TableRow
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editRegister_hint_food"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/txtFood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBackground"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                tools:text="13:30" />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editRegister_hint_work"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/txtWork"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBackground"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                tools:text="14:30" />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editRegister_hint_out"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/txtOut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBackground"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                tools:text="18:00" />
+
+        </TableRow>
+    </TableLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/tilComments"
@@ -72,9 +144,9 @@
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:lines="2"
+            android:layout_height="wrap_content"
             android:hint="@string/editRegister_hint_comments"
-            android:layout_height="wrap_content" />
+            android:lines="2" />
 
     </android.support.design.widget.TextInputLayout>
 
