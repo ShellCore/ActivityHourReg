@@ -10,6 +10,7 @@ interface RegisterDetailPresenter {
 
     fun loadRegisterMonth()
     fun saveRegister(day: Day)
+    fun deleteRegister(day: Day)
 
     fun onEventMainThread(event: RegisterDetailEvent)
 }

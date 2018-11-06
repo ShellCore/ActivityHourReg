@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatDialogFragment
 import android.view.LayoutInflater
@@ -35,7 +36,12 @@ class EditRegisterDialog : AppCompatDialogFragment(), DatePickerDialog.OnDateSet
         customView = activity!!.layoutInflater.inflate(R.layout.dialog_edit_register, null)
 
         return AlertDialog.Builder(context!!)
+                .setTitle("Detalle de registro")
                 .setView(customView)
+                .setNeutralButton(getString(R.string.editRegister_btn_delete)) { _, _ ->
+                    listener.onClickBtnDelete(day)
+                    dismiss()
+                }
                 .setNegativeButton(getString(R.string.editRegister_btn_cancel)) { _, _ ->
                     dismiss()
                 }

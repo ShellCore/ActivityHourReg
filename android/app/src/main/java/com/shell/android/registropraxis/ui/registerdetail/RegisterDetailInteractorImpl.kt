@@ -15,4 +15,8 @@ class RegisterDetailInteractorImpl(
     override fun saveRegister(day: Day) {
         repository.saveRegister(day)
     }
+
+    override fun deleteRegister(day: Day) {
+        repository.deleteRegister(day)
+    }
 }

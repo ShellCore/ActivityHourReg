@@ -89,6 +89,10 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
         presenter.saveRegister(day)
     }
 
+    override fun onClickBtnDelete(day: Day) {
+        presenter.deleteRegister(day)
+    }
+
     private fun setupInjection() {
         val app = activity!!.application as RegistroPraxisApplication
         val component = app.getRegisterDetailComponent(this)

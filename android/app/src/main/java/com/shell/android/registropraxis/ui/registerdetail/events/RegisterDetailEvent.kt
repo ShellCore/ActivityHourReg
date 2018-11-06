@@ -13,5 +13,7 @@ class RegisterDetailEvent(
         const val LOAD_ERROR = 2
         const val SAVE_SUCCESS = 3
         const val SAVE_ERROR = 4
+        const val DELETE_SUCCESS = 5
+        const val DELETE_ERROR = 6
     }
 }

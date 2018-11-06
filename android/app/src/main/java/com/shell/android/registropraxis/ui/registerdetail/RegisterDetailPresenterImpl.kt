@@ -37,6 +37,13 @@ class RegisterDetailPresenterImpl(
         }
     }
 
+    override fun deleteRegister(day: Day) {
+        view?.apply {
+            showProgressBar()
+            interactor.deleteRegister(day)
+        }
+    }
+
     @Subscribe
     override fun onEventMainThread(event: RegisterDetailEvent) {
         view?.apply {
@@ -45,11 +52,15 @@ class RegisterDetailPresenterImpl(
                 RegisterDetailEvent.LOAD_SUCCESS -> {
                     updateDayList(event.days!!)
                 }
-                RegisterDetailEvent.SAVE_SUCCESS -> {
+                RegisterDetailEvent.SAVE_SUCCESS,
+                RegisterDetailEvent.DELETE_SUCCESS -> {
                     loadRegisterMonth()
                 }
+
+
                 RegisterDetailEvent.LOAD_ERROR,
-                RegisterDetailEvent.SAVE_ERROR -> showMessage(event.message)
+                RegisterDetailEvent.SAVE_ERROR,
+                RegisterDetailEvent.DELETE_ERROR -> showMessage(event.message)
             }
         }
     }

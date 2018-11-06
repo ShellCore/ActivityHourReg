@@ -43,6 +43,14 @@ class RegisterDetailRepositoryImpl(
         }
     }
 
+    override fun deleteRegister(day: Day) {
+        if (day.delete()) {
+            post(RegisterDetailEvent.DELETE_SUCCESS)
+        } else {
+            post(RegisterDetailEvent.DELETE_ERROR, "No se pudo eliminar el registro correctamente")
+        }
+    }
+
     private fun post(eventType: Int = 0, message: String = "", days: List<Day>? = null) {
         val event = RegisterDetailEvent()
         event.apply {

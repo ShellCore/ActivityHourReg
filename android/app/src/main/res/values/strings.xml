@@ -40,6 +40,7 @@
     <string name="editRegister_hint_work">@string/work</string>
     <string name="editRegister_hint_out">@string/end</string>
     <string name="editRegister_hint_comments">Comentarios</string>
+    <string name="editRegister_btn_delete">@string/delete</string>
     <string name="editRegister_btn_cancel">@string/cancel</string>
     <string name="editRegister_btn_save">@string/save</string>
 
@@ -57,6 +58,7 @@
     <!--Common Buttons-->
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
+    <string name="delete">Borrar</string>
     <string name="clean">Limpiar</string>
     <string name="formattedHour">%1$s:%2$s</string>
 
