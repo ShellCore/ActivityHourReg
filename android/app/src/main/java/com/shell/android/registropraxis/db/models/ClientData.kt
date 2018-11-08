@@ -17,6 +17,9 @@ data class ClientData(
         var contact: String = "",
 
         @Column
-        var applicant: String = ""
+        var applicant: String = "",
+
+        @Column
+        var company: String = ""
 
 ) : BaseModel()

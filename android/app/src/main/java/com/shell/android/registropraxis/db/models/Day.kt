@@ -10,26 +10,26 @@ import java.util.*
 @Table(database = RegistroPraxisDB::class)
 data class Day(
 
-    @PrimaryKey(autoincrement = true)
-    var id: Long = 0L,
+        @PrimaryKey(autoincrement = true)
+        var id: Long = 0L,
 
-    @Column
-    var day: Date = Date(),
+        @Column
+        var day: Date = Date(),
 
-    @Column
-    var begin: String = "",
+        @Column
+        var begin: String = "",
 
-    @Column
-    var food: String = "",
+        @Column
+        var food: String = "",
 
-    @Column
-    var foodEnd: String = "",
+        @Column
+        var work: String = "",
 
-    @Column
-    var end: String = "",
+        @Column
+        var end: String = "",
 
-    @Column
-    var comments: String = ""
+        @Column
+        var comments: String = ""
 
 ) : BaseModel() {
     companion object {

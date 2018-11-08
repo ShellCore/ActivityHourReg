@@ -61,5 +61,6 @@
     <string name="delete">Borrar</string>
     <string name="clean">Limpiar</string>
     <string name="formattedHour">%1$s:%2$s</string>
+    <string name="clientData_hint_company">Compañia</string>
 
 </resources>
