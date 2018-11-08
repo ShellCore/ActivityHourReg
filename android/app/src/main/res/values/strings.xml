@@ -1,3 +1,66 @@
 <resources>
+
     <string name="app_name">Registro Praxis</string>
+
+    <!--Main menu-->
+    <string name="mainMenu_home">Inicio</string>
+    <string name="mainMenu_userData">Datos personales</string>
+    <string name="mainMenu_clientData">Datos del cliente</string>
+    <string name="mainMenu_activities">Actividades</string>
+    <string name="mainMenu_about">Acerca de</string>
+
+    <!--Drawer-->
+    <string name="open_drawer">Navigation drawer is open</string>
+    <string name="close_drawer">Navigation drawer is close</string>
+    <string name="home_btn_begin">@string/begin</string>
+    <string name="home_btn_food">@string/food</string>
+    <string name="home_btn_foodEnd">@string/work</string>
+    <string name="home_btn_end">@string/end</string>
+
+    <!--User Data-->
+    <string name="userData_hint_completeName">Nombre completo</string>
+    <string name="userData_hint_id">Id</string>
+
+    <!--Client Data-->
+    <string name="clientData_hint_contact">Contacto Praxis</string>
+    <string name="clientData_hint_applicant">Solicitante</string>
+
+    <!--RegisterDetail-->
+    <string name="registerDetail_title">Detalle de registro</string>
+    <string name="registerDetail_head_day">@string/day</string>
+    <string name="registerDetail_head_begin">@string/begin</string>
+    <string name="registerDetail_head_food">@string/food</string>
+    <string name="registerDetail_head_work">@string/work</string>
+    <string name="registerDetail_head_end">@string/end</string>
+
+    <!--EditRegister-->
+    <string name="editRegister_hint_day">@string/day</string>
+    <string name="editRegister_hint_in">@string/begin</string>
+    <string name="editRegister_hint_food">@string/food</string>
+    <string name="editRegister_hint_work">@string/work</string>
+    <string name="editRegister_hint_out">@string/end</string>
+    <string name="editRegister_hint_comments">Comentarios</string>
+    <string name="editRegister_btn_delete">@string/delete</string>
+    <string name="editRegister_btn_cancel">@string/cancel</string>
+    <string name="editRegister_btn_save">@string/save</string>
+
+    <!--Menu-->
+    <string name="menu_save">@string/save</string>
+    <string name="menu_clean">@string/clean</string>
+
+    <!--Common-->
+    <string name="day">Día</string>
+    <string name="begin">Entrada</string>
+    <string name="food">Comida</string>
+    <string name="work">Fin de comida</string>
+    <string name="end">Salida</string>
+
+    <!--Common Buttons-->
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Borrar</string>
+    <string name="clean">Limpiar</string>
+    <string name="formattedHour">%1$s:%2$s</string>
+    <string name="clientData_hint_company">Compañia</string>
+
 </resources>

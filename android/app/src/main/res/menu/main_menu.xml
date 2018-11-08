@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navHome"
+            android:title="@string/mainMenu_home" />
+        <item
+            android:id="@+id/navUserData"
+            android:title="@string/mainMenu_userData" />
+        <item
+            android:id="@+id/navClientData"
+            android:title="@string/mainMenu_clientData" />
+        <item
+            android:id="@+id/navActivities"
+            android:title="@string/mainMenu_activities" />
+    </group>
+
+    <item
+        android:id="@+id/navAbout"
+        android:title="@string/mainMenu_about" />
+
+</menu>
