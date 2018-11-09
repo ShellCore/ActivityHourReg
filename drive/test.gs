@@ -3,3 +3,30 @@ function testSetDay() {
     var json = JSON.parse(jsonString);
     saveData(json);
 }
+
+function testCreatePDF() {
+    try {
+        var path = createPdfFile();
+        Logger.log(path);
+    } catch (ex) {
+        Logger.log(ex);
+    }
+}
+
+function testGetShareUrl() {
+    var path = "Asistencia noviembre 2018.pdf";
+    Logger.log(path);
+    try {
+        var url = getFileUrl(path);
+        Logger.log(url);
+    } catch (ex) {
+        Logger.log(ex);
+    }
+}
+
+function testObtenerNombreArchivo() {
+    var userId = "MOGC";
+    var dateStr = "2018-11-10";
+    var fileName = obtenerNombreArchivo(userId, dateStr);
+    Logger.log(fileName)
+}

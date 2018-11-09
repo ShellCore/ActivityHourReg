@@ -8,17 +8,20 @@ function doPost(request) {
         return sendResponse(400, "No JSON request content found")
     }
     
-    var request = Request(contents);
-    if (saveData(contents)) {
-        return sendResponse(200, "Data saved");
-    } else {
-        return sendResponse(400, "Data couldn't save in file");
+    try {
+        saveData(contents);
+        var userId = getUserId(contents);
+        var date = getDate(contents);
+        var url = createPdfPath(userId, date);
+        return sendResponse(200, url);
+    } catch (ex) {
+        return sendResponse(400, ex);
     }
 }
 
-function sendResponse(code, msg) {
+function sendResponse(res, msg) {
     var response = {
-        result: code,
+        result: res,
         message: msg
     };
     

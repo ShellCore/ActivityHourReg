@@ -1,5 +1,5 @@
 // Id de la hoja de registros
-var SPREADSHEET_ID = "..."; // Id de archivo en Google Drive (ubicado en la barra de direcciones cuando se abre el archivo)
+var SPREADSHEET_ID = "16xHIzeIwORDAP7UmGKBDKS9ZMX-J9GBjAmczjCUjSnY";
 var sheet = SpreadsheetApp.openById(SPREADSHEET_ID);
 var data = sheet.getDataRange().getValues();
 
@@ -16,12 +16,8 @@ function saveData(request) {
             putDayInFormat(request.user, day);
         }
     } catch (ex) {
-        thow (ex)
+        throw (ex)
     }
-}
-
-function sendPdfFile() {
-    // TODO Falta implementación sendPdfFile()
 }
 
 function putUserClientData(clientData) {
@@ -35,10 +31,10 @@ function putUserClientData(clientData) {
     }
     
     sheet.getRange("C2:C3")
-            .setValues([[
-                clientData.client,
-                clientData.company
-            ]]);
+            .setValues([
+                [clientData.client],
+                [clientData.company]
+            ]);
     sheet.getRange("C41")
             .setValue(clientData.client + " / Gerente de cuenta");
 }
