@@ -20,6 +20,12 @@ function saveData(request) {
     }
 }
 
+function cleanData() {
+    sheet.getRange("C2:C3").setValues([[""],[""]]);
+    sheet.getRange("C41").setValue("");
+    sheet.getRange("B7:H37").clearContent();
+}
+
 function putUserClientData(clientData) {
     if (typeof clientData === 'undefined') {
         throw ("client not defined in json request");

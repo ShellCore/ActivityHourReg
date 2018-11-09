@@ -13,6 +13,7 @@ function doPost(request) {
         var userId = getUserId(contents);
         var date = getDate(contents);
         var url = createPdfPath(userId, date);
+        cleanData();
         return sendResponse(200, url);
     } catch (ex) {
         return sendResponse(400, ex);

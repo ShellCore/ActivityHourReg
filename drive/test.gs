@@ -30,3 +30,7 @@ function testObtenerNombreArchivo() {
     var fileName = obtenerNombreArchivo(userId, dateStr);
     Logger.log(fileName)
 }
+
+function testCleanData() {
+    cleanData();
+}
