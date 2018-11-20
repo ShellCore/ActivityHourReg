@@ -47,6 +47,7 @@
     <!--Menu-->
     <string name="menu_save">@string/save</string>
     <string name="menu_clean">@string/clean</string>
+    <string name="menu_generate_pdf">@string/generate_pdf</string>
 
     <!--Common-->
     <string name="day">Día</string>
@@ -60,6 +61,7 @@
     <string name="cancel">Cancelar</string>
     <string name="delete">Borrar</string>
     <string name="clean">Limpiar</string>
+    <string name="generate_pdf">Generar PDF</string>
     <string name="formattedHour">%1$s:%2$s</string>
     <string name="clientData_hint_company">Compañia</string>
 

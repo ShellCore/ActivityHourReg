@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.shell.android.registropraxis.R
 import com.shell.android.registropraxis.RegistroPraxisApplication
 import com.shell.android.registropraxis.db.models.Day
@@ -34,6 +32,7 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         activity?.setTitle(R.string.registerDetail_title)
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_register_detail, container, false)
     }
 
@@ -44,6 +43,18 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
         setupOnclick()
         presenter.onCreate()
         presenter.loadRegisterMonth()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        activity!!.menuInflater.inflate(R.menu.register_detail_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menuGeneratePdf -> onClickBtnGeneratePdf()
+            R.id.menuCleanRegister -> onClickBtnClean()
+        }
+        return true
     }
 
     override fun onDestroy() {
@@ -91,6 +102,14 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
 
     override fun onClickBtnDelete(day: Day) {
         presenter.deleteRegister(day)
+    }
+
+    private fun onClickBtnGeneratePdf() {
+        presenter.generateRegisterPdf()
+    }
+
+    private fun onClickBtnClean() {
+        presenter.cleanRegisters()
     }
 
     private fun setupInjection() {

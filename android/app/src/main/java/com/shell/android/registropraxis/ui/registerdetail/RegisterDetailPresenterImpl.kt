@@ -44,6 +44,14 @@ class RegisterDetailPresenterImpl(
         }
     }
 
+    override fun generateRegisterPdf() {
+        // TODO Falta implementación generateRegisterPdf()
+    }
+
+    override fun cleanRegisters() {
+        // TODO Falta implementación cleanRegisters()
+    }
+
     @Subscribe
     override fun onEventMainThread(event: RegisterDetailEvent) {
         view?.apply {
