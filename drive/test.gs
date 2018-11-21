@@ -26,7 +26,7 @@ function testGetShareUrl() {
 
 function testObtenerNombreArchivo() {
     var userId = "MOGC";
-    var dateStr = "2018-11-10";
+    var dateStr = "Nov 20, 2018 16:13:44";
     var fileName = obtenerNombreArchivo(userId, dateStr);
     Logger.log(fileName)
 }
