@@ -35,7 +35,7 @@ class RegisterAdapter(
             txtDay.text = day.day.getFormattedDay()
             txtIn.text = day.begin
             txtFood.text = day.food
-            txtWork.text = day.foodEnd
+            txtWork.text = day.work
             txtOut.text = day.end
             txtComments.text = if (day.comments.isNotEmpty()) "..." else ""
 

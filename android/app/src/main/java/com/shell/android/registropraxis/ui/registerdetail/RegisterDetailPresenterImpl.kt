@@ -44,6 +44,20 @@ class RegisterDetailPresenterImpl(
         }
     }
 
+    override fun generateRegisterPdf() {
+        view?.apply {
+            showProgressBar()
+            interactor.generateRegisterPdf()
+        }
+    }
+
+    override fun cleanRegisters() {
+        view?.apply {
+            showProgressBar()
+            interactor.cleanRegisters()
+        }
+    }
+
     @Subscribe
     override fun onEventMainThread(event: RegisterDetailEvent) {
         view?.apply {
@@ -52,15 +66,23 @@ class RegisterDetailPresenterImpl(
                 RegisterDetailEvent.LOAD_SUCCESS -> {
                     updateDayList(event.days!!)
                 }
+
                 RegisterDetailEvent.SAVE_SUCCESS,
-                RegisterDetailEvent.DELETE_SUCCESS -> {
+                RegisterDetailEvent.DELETE_SUCCESS,
+                RegisterDetailEvent.CLEAN_SUCCESS -> {
                     loadRegisterMonth()
                 }
 
+                RegisterDetailEvent.POST_ASSISTANCE_SUCCESS -> {
+                    showMessage(event.message)
+                }
 
                 RegisterDetailEvent.LOAD_ERROR,
                 RegisterDetailEvent.SAVE_ERROR,
-                RegisterDetailEvent.DELETE_ERROR -> showMessage(event.message)
+                RegisterDetailEvent.DELETE_ERROR,
+                RegisterDetailEvent.POST_ASSISTANCE_ERROR -> {
+                    showMessage(event.message)
+                }
             }
         }
     }

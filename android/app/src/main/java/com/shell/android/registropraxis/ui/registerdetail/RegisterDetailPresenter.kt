@@ -12,5 +12,8 @@ interface RegisterDetailPresenter {
     fun saveRegister(day: Day)
     fun deleteRegister(day: Day)
 
+    fun generateRegisterPdf()
+    fun cleanRegisters()
+
     fun onEventMainThread(event: RegisterDetailEvent)
 }

@@ -60,7 +60,7 @@ class EditRegisterDialog : AppCompatDialogFragment(), DatePickerDialog.OnDateSet
             txtDay!!.text = this.day.getFormattedDaySimple()
             txtIn.text = begin
             txtFood.text = food
-            txtWork.text = foodEnd
+            txtWork.text = work
             txtOut.text = end
             tilComments.setText(comments)
         }
@@ -83,7 +83,7 @@ class EditRegisterDialog : AppCompatDialogFragment(), DatePickerDialog.OnDateSet
             this.day = Date().setCustomDay(Integer.parseInt(txtDay.text.toString()))
             begin = txtIn.text.toString()
             food = txtFood.text.toString()
-            foodEnd = txtWork.text.toString()
+            work = txtWork.text.toString()
             end = txtOut.text.toString()
             comments = tilComments.getText()
         }
