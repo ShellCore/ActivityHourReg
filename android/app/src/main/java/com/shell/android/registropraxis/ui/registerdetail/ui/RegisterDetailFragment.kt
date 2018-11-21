@@ -14,6 +14,7 @@ import com.shell.android.registropraxis.ui.editregister.ui.OnConditionClickListe
 import com.shell.android.registropraxis.ui.registerdetail.RegisterDetailPresenter
 import com.shell.android.registropraxis.ui.registerdetail.adapters.DayListener
 import com.shell.android.registropraxis.ui.registerdetail.adapters.RegisterAdapter
+import com.shell.android.shellcorebaselibrary.utils.downloadFile
 import com.shell.android.shellcorebaselibrary.utils.showMessage
 import kotlinx.android.synthetic.main.fragment_register_detail.*
 import javax.inject.Inject
@@ -87,6 +88,10 @@ class RegisterDetailFragment : Fragment(), RegisterDetailView, DayListener, OnCo
     override fun updateDayList(days: List<Day>) {
         this.days = days
         registerAdapter.updateDayList(this.days)
+    }
+
+    override fun downloadPdf(url: String) {
+        url.downloadFile(context!!)
     }
 
     override fun onDaySelected(day: Day) {

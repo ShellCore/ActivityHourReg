@@ -74,7 +74,7 @@ class RegisterDetailPresenterImpl(
                 }
 
                 RegisterDetailEvent.POST_ASSISTANCE_SUCCESS -> {
-                    showMessage(event.message)
+                    downloadPdf(event.message)
                 }
 
                 RegisterDetailEvent.LOAD_ERROR,
