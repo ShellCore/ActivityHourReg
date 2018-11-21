@@ -16,4 +16,5 @@ interface RegisterDetailPresenter {
     fun cleanRegisters()
 
     fun onEventMainThread(event: RegisterDetailEvent)
+
 }
