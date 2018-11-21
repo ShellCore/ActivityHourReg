@@ -1,4 +1,4 @@
-package com.shell.android.registropraxis.rest.postassistance
+package com.shell.android.registropraxis.rest.services.postassistance
 
 import com.shell.android.registropraxis.db.models.ClientData
 import com.shell.android.registropraxis.db.models.Day

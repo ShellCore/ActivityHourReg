@@ -3,6 +3,7 @@ package com.shell.android.registropraxis
 import android.app.Application
 import com.raizlabs.android.dbflow.config.FlowManager
 import com.shell.android.registropraxis.libs.di.LibsModule
+import com.shell.android.registropraxis.rest.di.RestModule
 import com.shell.android.registropraxis.ui.clientdata.di.ClientDataModule
 import com.shell.android.registropraxis.ui.clientdata.di.DaggerClientDataComponent
 import com.shell.android.registropraxis.ui.clientdata.ui.ClientDataView
@@ -52,6 +53,7 @@ class RegistroPraxisApplication : Application() {
 
     fun getRegisterDetailComponent(view: RegisterDetailView) = DaggerRegisterDetailComponent.builder()
             .libsModule(LibsModule())
+            .restModule(RestModule())
             .registerDetailModule(RegisterDetailModule(view))
             .build()!!
 }
