@@ -18,7 +18,7 @@ class ClientDataInteractorImpl(
 
     override fun saveClientData(clientData: ClientData) {
         if (clientData.contact.isEmpty()
-                || clientData.applicant.isEmpty()
+                || clientData.client.isEmpty()
                 || clientData.company.isEmpty()) {
             post(UserDataEvent.SAVE_ERROR, "Se requiere que el Nombre de Contacto, Solicitante y Compañía tengan valores válidos")
         } else {
