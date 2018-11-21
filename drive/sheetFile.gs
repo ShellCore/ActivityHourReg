@@ -31,18 +31,18 @@ function putUserClientData(clientData) {
         throw ("client not defined in json request");
     }
 
-    if (typeof clientData.client === 'undefined'
+    if (typeof clientData.contact === 'undefined'
             || typeof clientData.company === 'undefined') {
         throw ("client data or company not found in json request");
     }
     
     sheet.getRange("C2:C3")
             .setValues([
-                [clientData.client],
+                [clientData.contact],
                 [clientData.company]
             ]);
     sheet.getRange("C41")
-            .setValue(clientData.client + " / Gerente de cuenta");
+            .setValue(clientData.contact + " / Gerente de cuenta");
 }
 
 function putDayInFormat(user, day) {

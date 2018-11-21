@@ -3,13 +3,10 @@ function getDay(date) {
 }
 
 function formatYearMonth(dateStr) {
-    // yyyy-MM-dd
+    // Nov 20, 2018 16:13:44
     Logger.log(dateStr);
-    
-    var year = +dateStr.substring(0, 4);
-    var month = +dateStr.substring(5, 7);
 
-    var date = new Date(year, month-1, 1);
+    var date = new Date(dateStr);
     
     var dateFormatted = Utilities.formatDate(date, "GTM", "yyyy-MM");
     return dateFormatted;
