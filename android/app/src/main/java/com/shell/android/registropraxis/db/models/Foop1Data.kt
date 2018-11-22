@@ -7,22 +7,16 @@ import com.raizlabs.android.dbflow.structure.BaseModel
 import com.shell.android.registropraxis.db.RegistroPraxisDB
 
 @Table(database = RegistroPraxisDB::class)
-data class ClientData(
+open class Foop1Data (
 
-        @PrimaryKey(autoincrement = true)
-        @Column
-        var id: Long = 0L,
+    @PrimaryKey(autoincrement = true)
+    @Column
+    var id: Long = 0L,
 
-        @Column
-        var contact: String = "",
+    @Column
+    var job: String = "",
 
-        @Column
-        var client: String = "",
-
-        @Column
-        var company: String = "",
-
-        @Column
-        var assignKey: String = ""
+    @Column
+    var department: String = ""
 
 ) : BaseModel()

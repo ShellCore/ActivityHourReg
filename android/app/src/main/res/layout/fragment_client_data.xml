@@ -59,6 +59,19 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/clientData_hint_company" />
             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilAssignKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/clientData_hint_assignKey" />
+            </android.support.design.widget.TextInputLayout>
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
