@@ -7,6 +7,7 @@ import android.view.*
 import com.raizlabs.android.dbflow.kotlinextensions.save
 
 import com.shell.android.registropraxis.R
+import com.shell.android.registropraxis.RegistroPraxisApplication
 import com.shell.android.registropraxis.db.models.Foop1Data
 import com.shell.android.registropraxis.ui.foop1.Foop1Presenter
 import com.shell.android.shellcorebaselibrary.utils.downloadFile
@@ -96,6 +97,8 @@ class Foop1Fragment : Fragment(), Foop1View {
     }
 
     private fun setupInjection() {
-        // TODO Falta implementación setupInjection()
+        val app = activity!!.application as RegistroPraxisApplication
+        val component = app.getFoop1Component(this)
+        component.inject(this)
     }
 }
