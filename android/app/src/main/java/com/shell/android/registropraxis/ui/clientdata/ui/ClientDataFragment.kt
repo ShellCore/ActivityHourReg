@@ -69,12 +69,14 @@ class ClientDataFragment : Fragment(), ClientDataView {
         tilContact.setText(clientData.contact)
         tilApplicant.setText(clientData.client)
         tilCompany.setText(clientData.company)
+        tilAssignKey.setText(clientData.assignKey)
     }
 
     override fun cleanData() {
         tilContact.setText("")
         tilApplicant.setText("")
         tilCompany.setText("")
+        tilAssignKey.setText("")
         presenter.cleanClientData(this.clientData)
     }
 
@@ -83,6 +85,7 @@ class ClientDataFragment : Fragment(), ClientDataView {
             contact = tilContact.getText()
             client = tilApplicant.getText()
             company = tilCompany.getText()
+            assignKey = tilAssignKey.getText()
             presenter.saveClientData(this)
         }
     }
