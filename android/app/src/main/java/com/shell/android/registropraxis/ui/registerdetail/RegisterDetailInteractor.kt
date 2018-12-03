@@ -7,4 +7,6 @@ interface RegisterDetailInteractor {
     fun loadRegisterMonth()
     fun saveRegister(day: Day)
     fun deleteRegister(day: Day)
+    fun cleanRegisters()
+    fun generateRegisterPdf()
 }

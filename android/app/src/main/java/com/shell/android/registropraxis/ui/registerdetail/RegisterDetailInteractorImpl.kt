@@ -19,4 +19,12 @@ class RegisterDetailInteractorImpl(
     override fun deleteRegister(day: Day) {
         repository.deleteRegister(day)
     }
+
+    override fun cleanRegisters() {
+        repository.cleanRegisters()
+    }
+
+    override fun generateRegisterPdf() {
+        repository.generateRegisterPdf()
+    }
 }

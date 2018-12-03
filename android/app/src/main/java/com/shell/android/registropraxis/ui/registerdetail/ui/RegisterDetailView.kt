@@ -9,4 +9,5 @@ interface RegisterDetailView {
     fun showMessage(message: String)
 
     fun updateDayList(days: List<Day>)
+    fun downloadPdf(url: String)
 }

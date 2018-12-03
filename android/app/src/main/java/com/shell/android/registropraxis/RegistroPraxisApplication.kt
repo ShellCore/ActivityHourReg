@@ -3,19 +3,20 @@ package com.shell.android.registropraxis
 import android.app.Application
 import com.raizlabs.android.dbflow.config.FlowManager
 import com.shell.android.registropraxis.libs.di.LibsModule
+import com.shell.android.registropraxis.rest.di.RestModule
 import com.shell.android.registropraxis.ui.clientdata.di.ClientDataModule
 import com.shell.android.registropraxis.ui.clientdata.di.DaggerClientDataComponent
 import com.shell.android.registropraxis.ui.clientdata.ui.ClientDataView
+import com.shell.android.registropraxis.ui.foop1.di.DaggerFoop1Component
+import com.shell.android.registropraxis.ui.foop1.di.Foop1Module
+import com.shell.android.registropraxis.ui.foop1.ui.Foop1View
 import com.shell.android.registropraxis.ui.home.di.DaggerHomeComponent
-import com.shell.android.registropraxis.ui.home.di.HomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeModule
 import com.shell.android.registropraxis.ui.home.ui.HomeView
 import com.shell.android.registropraxis.ui.registerdetail.di.DaggerRegisterDetailComponent
-import com.shell.android.registropraxis.ui.registerdetail.di.RegisterDetailComponent
 import com.shell.android.registropraxis.ui.registerdetail.di.RegisterDetailModule
 import com.shell.android.registropraxis.ui.registerdetail.ui.RegisterDetailView
 import com.shell.android.registropraxis.ui.userdata.di.DaggerUserDataComponent
-import com.shell.android.registropraxis.ui.userdata.di.UserDataComponent
 import com.shell.android.registropraxis.ui.userdata.di.UserDataModule
 import com.shell.android.registropraxis.ui.userdata.ui.UserDataView
 
@@ -52,6 +53,13 @@ class RegistroPraxisApplication : Application() {
 
     fun getRegisterDetailComponent(view: RegisterDetailView) = DaggerRegisterDetailComponent.builder()
             .libsModule(LibsModule())
+            .restModule(RestModule())
             .registerDetailModule(RegisterDetailModule(view))
+            .build()!!
+
+    fun getFoop1Component(view: Foop1View) = DaggerFoop1Component.builder()
+            .libsModule(LibsModule())
+            .restModule(RestModule())
+            .foop1Module(Foop1Module(view))
             .build()!!
 }

@@ -67,22 +67,25 @@ class ClientDataFragment : Fragment(), ClientDataView {
     override fun loadData(clientData: ClientData) {
         this.clientData = clientData
         tilContact.setText(clientData.contact)
-        tilApplicant.setText(clientData.applicant)
+        tilApplicant.setText(clientData.client)
         tilCompany.setText(clientData.company)
+        tilAssignKey.setText(clientData.assignKey)
     }
 
     override fun cleanData() {
         tilContact.setText("")
         tilApplicant.setText("")
         tilCompany.setText("")
+        tilAssignKey.setText("")
         presenter.cleanClientData(this.clientData)
     }
 
     override fun saveData() {
         this.clientData.apply {
             contact = tilContact.getText()
-            applicant = tilApplicant.getText()
+            client = tilApplicant.getText()
             company = tilCompany.getText()
+            assignKey = tilAssignKey.getText()
             presenter.saveClientData(this)
         }
     }

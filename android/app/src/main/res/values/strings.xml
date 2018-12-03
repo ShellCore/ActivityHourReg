@@ -24,6 +24,7 @@
     <!--Client Data-->
     <string name="clientData_hint_contact">Contacto Praxis</string>
     <string name="clientData_hint_applicant">Solicitante</string>
+    <string name="clientData_hint_assignKey">Clave de Asignación</string>
 
     <!--RegisterDetail-->
     <string name="registerDetail_title">Detalle de registro</string>
@@ -44,9 +45,26 @@
     <string name="editRegister_btn_cancel">@string/cancel</string>
     <string name="editRegister_btn_save">@string/save</string>
 
+    <!--Activities-->
+    <string name="activities_btn_foop1">@string/foop1_title</string>
+    <string name="activities_btn_foop2">@string/foop2_title</string>
+    <string name="activities_btn_foop3">@string/foop3_title</string>
+
+    <!--FOOP 001-->
+    <string name="foop1_title">FOOP 001</string>
+    <string name="foop1_hint_job">Puesto</string>
+    <string name="foop1_hint_department">Departamento</string>
+
+    <!--FOOP 002-->
+    <string name="foop2_title">FOOP 002</string>
+
+    <!--FOOP 003-->
+    <string name="foop3_title">FOOP 003</string>
+
     <!--Menu-->
     <string name="menu_save">@string/save</string>
     <string name="menu_clean">@string/clean</string>
+    <string name="menu_generate_pdf">@string/generate_pdf</string>
 
     <!--Common-->
     <string name="day">Día</string>
@@ -60,7 +78,7 @@
     <string name="cancel">Cancelar</string>
     <string name="delete">Borrar</string>
     <string name="clean">Limpiar</string>
+    <string name="generate_pdf">Generar PDF</string>
     <string name="formattedHour">%1$s:%2$s</string>
     <string name="clientData_hint_company">Compañia</string>
-
 </resources>

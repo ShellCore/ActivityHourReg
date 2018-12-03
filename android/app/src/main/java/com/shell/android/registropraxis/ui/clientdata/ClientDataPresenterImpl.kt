@@ -46,18 +46,26 @@ class ClientDataPresenterImpl(
 
     @Subscribe
     override fun onEventMainThread(event: ClientDataEvent) {
-        view?.hideProgressbar()
+        view?.apply {
+            hideProgressbar()
 
-        when (event.eventType) {
-            ClientDataEvent.LOAD_SUCCESS -> view?.loadData(event.clientData!!)
-            ClientDataEvent.SAVE_SUCCESS -> {
-                view?.loadData(event.clientData!!)
-                view?.showMessage(event.message)
+            when (event.eventType) {
+                ClientDataEvent.LOAD_SUCCESS -> {
+                    loadData(event.clientData!!)
+                }
+                ClientDataEvent.SAVE_SUCCESS -> {
+                    loadData(event.clientData!!)
+                    showMessage(event.message)
+                }
+                ClientDataEvent.CLEAN_SUCCESS -> {
+                    loadData(ClientData())
+                }
+                ClientDataEvent.LOAD_ERROR,
+                ClientDataEvent.SAVE_ERROR,
+                ClientDataEvent.CLEAN_ERROR -> {
+                    showMessage(event.message)
+                }
             }
-            ClientDataEvent.CLEAN_SUCCESS -> view?.loadData(ClientData())
-            ClientDataEvent.LOAD_ERROR,
-            ClientDataEvent.SAVE_ERROR,
-            ClientDataEvent.CLEAN_ERROR -> view?.showMessage(event.message)
         }
     }
 }

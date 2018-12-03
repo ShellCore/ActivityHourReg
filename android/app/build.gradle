@@ -14,7 +14,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "DRIVE_URL", project.property('GOOGLE_DRIVE_SERVER')
+        }
         release {
+            buildConfigField "String", "DRIVE_URL", project.property('GOOGLE_DRIVE_SERVER')
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -39,6 +43,7 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
     implementation 'com.github.Raizlabs.DBFlow:dbflow-core:4.2.4'
     implementation 'com.github.Raizlabs.DBFlow:dbflow:4.2.4'

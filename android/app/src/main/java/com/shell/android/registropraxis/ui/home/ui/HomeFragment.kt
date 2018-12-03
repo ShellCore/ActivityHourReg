@@ -100,7 +100,7 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
         when (time) {
             Day.TIME_IN -> day.begin = registeredDate.getFormattedHour()
             Day.TIME_FOOD -> day.food = registeredDate.getFormattedHour()
-            Day.TIME_WORK -> day.foodEnd = registeredDate.getFormattedHour()
+            Day.TIME_WORK -> day.work = registeredDate.getFormattedHour()
             Day.TIME_OUT -> day.end = registeredDate.getFormattedHour()
         }
         presenter.saveActualDay(day)

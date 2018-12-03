@@ -1,6 +1,7 @@
 package com.shell.android.registropraxis.ui.registerdetail.di
 
 import com.shell.android.registropraxis.libs.base.EventBus
+import com.shell.android.registropraxis.rest.DriveService
 import com.shell.android.registropraxis.ui.registerdetail.*
 import com.shell.android.registropraxis.ui.registerdetail.ui.RegisterDetailView
 import dagger.Module
@@ -26,6 +27,6 @@ class RegisterDetailModule(val view: RegisterDetailView) {
 
     @Provides
     @Singleton
-    fun providesRegisterDetailRepository(eventBus: EventBus): RegisterDetailRepository
-            = RegisterDetailRepositoryImpl(eventBus)
+    fun providesRegisterDetailRepository(eventBus: EventBus, service: DriveService): RegisterDetailRepository
+            = RegisterDetailRepositoryImpl(eventBus, service)
 }
