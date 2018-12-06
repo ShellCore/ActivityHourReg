@@ -64,7 +64,7 @@ class Foop1RepositoryImpl(
         } else {
             val request = PostFoop1Request(user, client, foop1)
             service.postFoop1(request)
-                    .enqueue(object: BaseCallback<PostFoop1Response>() {
+                    .enqueue(object : BaseCallback<PostFoop1Response>() {
                         override fun onSuccess(response: PostFoop1Response) {
                             post(Foop1DataEvent.POST_FOOP1_SUCCESS, response.message)
                         }

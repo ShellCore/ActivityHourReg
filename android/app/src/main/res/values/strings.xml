@@ -57,6 +57,10 @@
 
     <!--FOOP 002-->
     <string name="foop2_title">FOOP 002</string>
+    <string name="foop2_hint_application">Aplicación</string>
+    <string name="foop2_hint_description">Descripción Corta</string>
+    <string name="foop2_hint_description_large">Descripción Larga</string>
+    <string name="foop2_hint_justification">Justificación</string>
 
     <!--FOOP 003-->
     <string name="foop3_title">FOOP 003</string>
