@@ -52,7 +52,6 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
     }
 
     override fun onClick(itemView: View) {
-        var type: Int
         when (itemView.id) {
             R.id.btnIn -> setHourRegistration(Day.TIME_IN, Calendar.getInstance().time)
             R.id.btnFood -> setHourRegistration(Day.TIME_FOOD, Calendar.getInstance().time)

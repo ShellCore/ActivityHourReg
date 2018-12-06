@@ -10,6 +10,9 @@ import com.shell.android.registropraxis.ui.clientdata.ui.ClientDataView
 import com.shell.android.registropraxis.ui.foop1.di.DaggerFoop1Component
 import com.shell.android.registropraxis.ui.foop1.di.Foop1Module
 import com.shell.android.registropraxis.ui.foop1.ui.Foop1View
+import com.shell.android.registropraxis.ui.foop2.di.DaggerFoop2Component
+import com.shell.android.registropraxis.ui.foop2.di.Foop2Module
+import com.shell.android.registropraxis.ui.foop2.ui.Foop2View
 import com.shell.android.registropraxis.ui.home.di.DaggerHomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeModule
 import com.shell.android.registropraxis.ui.home.ui.HomeView
@@ -61,5 +64,11 @@ class RegistroPraxisApplication : Application() {
             .libsModule(LibsModule())
             .restModule(RestModule())
             .foop1Module(Foop1Module(view))
+            .build()!!
+
+    fun getFoop2Component(view: Foop2View) = DaggerFoop2Component.builder()
+            .libsModule(LibsModule())
+            .restModule(RestModule())
+            .foop2Module(Foop2Module(view))
             .build()!!
 }

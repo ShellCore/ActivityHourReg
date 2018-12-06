@@ -1,8 +1,8 @@
 package com.shell.android.registropraxis.rest.services.postfoop2
 
-import android.service.autofill.UserData
 import com.shell.android.registropraxis.db.models.ClientData
 import com.shell.android.registropraxis.db.models.Foop2Data
+import com.shell.android.registropraxis.db.models.UserData
 
 class PostFoop2Request (
 
