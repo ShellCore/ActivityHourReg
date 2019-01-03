@@ -55,7 +55,7 @@ class Foop2Fragment : Fragment(), Foop2View {
         super.onDestroy()
     }
 
-    override fun showProgreesbar() {
+    override fun showProgressBar() {
         progressBar.visibility = View.VISIBLE
     }
 

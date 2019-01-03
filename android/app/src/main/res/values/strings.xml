@@ -62,8 +62,26 @@
     <string name="foop2_hint_description_large">Descripción Larga</string>
     <string name="foop2_hint_justification">Justificación</string>
 
+    <!-- FOOP 003 List -->
+    <string name="foop3_list_title">Lista registros FOOP 003</string>
+    <string name="foop3_list_head_number">No.</string>
+    <string name="foop3_list_head_begin">Inicio</string>
+    <string name="foop3_list_head_end">Fin</string>
+    <string name="foop3_list_head_scheduled">Horas</string>
+
+    <!-- FOOP 003 Detail -->
+    <string name="editFoop3_btn_delete">@string/delete</string>
+    <string name="editFoop3_btn_cancel">@string/cancel</string>
+    <string name="editFoop3_btn_save">@string/save</string>
+
     <!--FOOP 003-->
     <string name="foop3_title">FOOP 003</string>
+    <string name="foop3_hint_num">Número</string>
+    <string name="foop3_hint_description">Descripción Corta</string>
+    <string name="foop3_hint_app">Aplicación</string>
+    <string name="foop3_hint_begin">Inicio programación</string>
+    <string name="foop3_hint_end">Fin programación</string>
+    <string name="foop3_hint_scheduledHour">Horas programadas</string>
 
     <!--Menu-->
     <string name="menu_save">@string/save</string>
@@ -85,4 +103,5 @@
     <string name="generate_pdf">Generar PDF</string>
     <string name="formattedHour">%1$s:%2$s</string>
     <string name="clientData_hint_company">Compañia</string>
+
 </resources>

@@ -13,6 +13,9 @@ import com.shell.android.registropraxis.ui.foop1.ui.Foop1View
 import com.shell.android.registropraxis.ui.foop2.di.DaggerFoop2Component
 import com.shell.android.registropraxis.ui.foop2.di.Foop2Module
 import com.shell.android.registropraxis.ui.foop2.ui.Foop2View
+import com.shell.android.registropraxis.ui.foop3list.di.DaggerFoop3ListComponent
+import com.shell.android.registropraxis.ui.foop3list.di.Foop3ListModule
+import com.shell.android.registropraxis.ui.foop3list.ui.Foop3ListView
 import com.shell.android.registropraxis.ui.home.di.DaggerHomeComponent
 import com.shell.android.registropraxis.ui.home.di.HomeModule
 import com.shell.android.registropraxis.ui.home.ui.HomeView
@@ -70,5 +73,11 @@ class RegistroPraxisApplication : Application() {
             .libsModule(LibsModule())
             .restModule(RestModule())
             .foop2Module(Foop2Module(view))
+            .build()!!
+
+    fun getFoop3ListComponent(view: Foop3ListView) = DaggerFoop3ListComponent.builder()
+            .libsModule(LibsModule())
+            .restModule(RestModule())
+            .foop3ListModule(Foop3ListModule(view))
             .build()!!
 }

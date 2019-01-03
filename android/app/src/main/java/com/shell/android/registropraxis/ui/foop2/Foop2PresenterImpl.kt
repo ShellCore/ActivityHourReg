@@ -25,28 +25,28 @@ class Foop2PresenterImpl (
 
     override fun loadSavedFoop2Data() {
         view?.apply {
-            showProgreesbar()
+            showProgressBar()
             interactor.loadSavedFoop2Data()
         }
     }
 
     override fun saveFoop2Data(foop2Data: Foop2Data) {
         view?.apply {
-            showProgreesbar()
+            showProgressBar()
             interactor.saveFoop2Data(foop2Data)
         }
     }
 
     override fun cleanFoop2Data(foop2Data: Foop2Data) {
         view?.apply {
-            showProgreesbar()
+            showProgressBar()
             interactor.cleanFoop2Data(foop2Data)
         }
     }
 
     override fun generateFoop2Pdf() {
         view?.apply {
-            showProgreesbar()
+            showProgressBar()
             interactor.generateFoop2Pdf()
         }
     }

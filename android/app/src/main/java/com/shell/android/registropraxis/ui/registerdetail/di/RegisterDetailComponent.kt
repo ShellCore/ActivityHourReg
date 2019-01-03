@@ -7,7 +7,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = arrayOf(LibsModule::class, RestModule::class, RegisterDetailModule::class))
+@Component(modules = [LibsModule::class, RestModule::class, RegisterDetailModule::class])
 interface RegisterDetailComponent {
     fun inject(fragment: RegisterDetailFragment)
 }
