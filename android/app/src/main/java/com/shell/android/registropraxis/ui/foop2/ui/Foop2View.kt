@@ -4,7 +4,7 @@ import com.shell.android.registropraxis.db.models.Foop2Data
 
 interface Foop2View {
 
-    fun showProgreesbar()
+    fun showProgressBar()
     fun hideProgreesbar()
     fun showMessage(message: String)
 

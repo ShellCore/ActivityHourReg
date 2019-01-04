@@ -6,6 +6,8 @@ import com.shell.android.registropraxis.rest.services.postfoop1.PostFoop1Request
 import com.shell.android.registropraxis.rest.services.postfoop1.PostFoop1Response
 import com.shell.android.registropraxis.rest.services.postfoop2.PostFoop2Request
 import com.shell.android.registropraxis.rest.services.postfoop2.PostFoop2Response
+import com.shell.android.registropraxis.rest.services.postfoop3.PostFoop3Request
+import com.shell.android.registropraxis.rest.services.postfoop3.PostFoop3Response
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -20,4 +22,7 @@ interface DriveService {
 
     @POST("AKfycbzppOS0cVOxNTDRYVpkOdNyLup0QThcZCEq-oMw/exec")
     fun postFoop2(@Body request: PostFoop2Request) : Call<PostFoop2Response>
+
+    @POST("AKfycbx2k64leUR_5GD8OAgcm-2T5MWldmI4bgKrBxup_D6wtUs_hSs/exec")
+    fun postFoop3(@Body request: PostFoop3Request) : Call<PostFoop3Response>
 }
